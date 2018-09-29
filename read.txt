@@ -1,0 +1,6 @@
+start/stop/restart/status
+
+service postgresql  	//database
+service odoo-server1 	//Odoo10 :8068
+service odoo-server2 	//Odoo11 :8069
+service odoo-server3 	//Odoo12 :8070
