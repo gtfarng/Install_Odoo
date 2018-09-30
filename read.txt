@@ -17,3 +17,7 @@ service postgresql status
 service odoo-server1 status	
 service odoo-server2 status	
 service odoo-server3 status	
+
+https://github.com/gtfarng/Install_Odoo
+
+cp -r /odoo-dev/Install_Odoo/database_cleanup-11.0.1.0.0/* /odoo/odoo-server2/addons/database_cleanup-11.0.1.0.0/ 
