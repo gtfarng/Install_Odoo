@@ -1,6 +1,19 @@
 start/stop/restart/status
 
 service postgresql  	//database
-service odoo-server1 	//Odoo10 :8068
-service odoo-server2 	//Odoo11 :8069
-service odoo-server3 	//Odoo12 :8070
+service odoo-server1 status	//Odoo10 :8068
+service odoo-server2 status	//Odoo11 :8069
+service odoo-server3 status	//Odoo12 :8070
+
+sudo ufw allow ssh
+sudo ufw allow 8069/tcp
+sudo ufw enable
+
+sudo ufw allow ssh
+sudo ufw allow 8070/tcp
+sudo ufw enable
+
+service postgresql status	
+service odoo-server1 status	
+service odoo-server2 status	
+service odoo-server3 status	
