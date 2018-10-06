@@ -1,1 +1,1 @@
-.. include:: ../README.rst
+Install Openupgrade library
