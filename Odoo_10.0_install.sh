@@ -16,9 +16,9 @@
 
 ##fixed parameters
 #odoo
-OE_USER="odoo10"
+OE_USER="odoo"
 OE_HOME="/$OE_USER"
-OE_HOME_EXT="/$OE_USER/${OE_USER}-server"
+OE_HOME_EXT="/$OE_USER/${OE_USER}-server10"
 #The default port where this Odoo instance will run under (provided you use the command -c in the terminal)
 #Set to true if you want to install it, false if you don't need it or have it already installed.
 INSTALL_WKHTMLTOPDF="True"
@@ -31,7 +31,7 @@ OE_VERSION="10.0"
 IS_ENTERPRISE="False"
 #set the superadmin password
 OE_SUPERADMIN="admin"
-OE_CONFIG="${OE_USER}-server"
+OE_CONFIG="${OE_USER}-server10"
 
 ##
 ###  WKHTMLTOPDF download links
@@ -164,7 +164,7 @@ sudo chmod 640 /etc/${OE_CONFIG}.conf
 
 echo -e "* Create startup file"
 sudo su root -c "echo '#!/bin/sh' >> $OE_HOME_EXT/start.sh"
-sudo su root -c "echo 'sudo -u $OE_USER $OE_HOME_EXT/openerp-server --config=/etc/${OE_CONFIG}.conf' >> $OE_HOME_EXT/start.sh"
+sudo su root -c "echo 'sudo -u $OE_USER $OE_HOME_EXT/openerp-server10 --config=/etc/${OE_CONFIG}.conf' >> $OE_HOME_EXT/start.sh"
 sudo chmod 755 $OE_HOME_EXT/start.sh
 
 #--------------------------------------------------
