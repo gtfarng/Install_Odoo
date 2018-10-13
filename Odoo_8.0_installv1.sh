@@ -20,9 +20,9 @@
  
 ##fixed parameters
 #openerp
-OE_USER="odoo8"
+OE_USER="odoo"
 OE_HOME="/opt/$OE_USER"
-OE_HOME_EXT="/opt/$OE_USER/$OE_USER-server"
+OE_HOME_EXT="/opt/$OE_USER/$OE_USER-server8"
 # Replace for openerp-gevent for enabling gevent mode for chat
 OE_SERVERTYPE="openerp-server"
 
@@ -31,7 +31,7 @@ OE_VERSION="8.0"
 
 #set the superadmin password
 OE_SUPERADMIN="admin"
-OE_CONFIG="$OE_USER-server"
+OE_CONFIG="$OE_USER-server8"
 
 #--------------------------------------------------
 # Set Locale en_US.UTF-8
