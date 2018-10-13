@@ -18,14 +18,14 @@
 
 OE_USER="odoo"
 OE_HOME="/$OE_USER"
-OE_HOME_EXT="/$OE_USER/$OE_USER-server8"
+OE_HOME_EXT="/$OE_USER/$OE_USER-server"
 
 #Enter version for checkout "9.0" for version 9.0,"8.0" for version 8.0, "7.0 (version 7), "master" for trunk
 OE_VERSION="8.0"
 
 #set the superadmin password
 OE_SUPERADMIN="admin"
-OE_CONFIG="$OE_USER-server8"
+OE_CONFIG="$OE_USER-server"
 
 #--------------------------------------------------
 # Update Server
@@ -110,7 +110,7 @@ sudo easy_install pyPdf vatnumber pydot psycogreen suds ofxparse
 # Configure ODOO
 #--------------------------------------------------
 echo -e "* Create server config file"
-sudo cp $OE_HOME_EXT/debian/openerp-server8.conf /etc/$OE_CONFIG.conf
+sudo cp $OE_HOME_EXT/debian/openerp-server.conf /etc/$OE_CONFIG.conf
 sudo chown $OE_USER:$OE_USER /etc/$OE_CONFIG.conf
 sudo chmod 640 /etc/$OE_CONFIG.conf
 
@@ -128,7 +128,7 @@ sudo su root -c "echo 'addons_path=$OE_HOME_EXT/addons,$OE_HOME/custom/addons' >
 
 echo -e "* Create startup file"
 sudo su root -c "echo '#!/bin/sh' >> $OE_HOME_EXT/start.sh"
-sudo su root -c "echo 'sudo -u $OE_USER $OE_HOME_EXT/openerp-server8 --config=/etc/$OE_CONFIG.conf' >> $OE_HOME_EXT/start.sh"
+sudo su root -c "echo 'sudo -u $OE_USER $OE_HOME_EXT/openerp-server --config=/etc/$OE_CONFIG.conf' >> $OE_HOME_EXT/start.sh"
 sudo chmod 755 $OE_HOME_EXT/start.sh
 
 #--------------------------------------------------
@@ -149,14 +149,14 @@ echo '# Short-Description: Enterprise Business Applications' >> ~/$OE_CONFIG
 echo '# Description: ODOO Business Applications' >> ~/$OE_CONFIG
 echo '### END INIT INFO' >> ~/$OE_CONFIG
 echo 'PATH=/bin:/sbin:/usr/bin' >> ~/$OE_CONFIG
-echo "DAEMON=$OE_HOME_EXT/openerp-server8" >> ~/$OE_CONFIG
+echo "DAEMON=$OE_HOME_EXT/openerp-server" >> ~/$OE_CONFIG
 echo "NAME=$OE_CONFIG" >> ~/$OE_CONFIG
 echo "DESC=$OE_CONFIG" >> ~/$OE_CONFIG
 echo '' >> ~/$OE_CONFIG
 echo '# Specify the user name (Default: odoo).' >> ~/$OE_CONFIG
 echo "USER=$OE_USER" >> ~/$OE_CONFIG
 echo '' >> ~/$OE_CONFIG
-echo '# Specify an alternate config file (Default: /etc/openerp-server8.conf).' >> ~/$OE_CONFIG
+echo '# Specify an alternate config file (Default: /etc/openerp-server.conf).' >> ~/$OE_CONFIG
 echo "CONFIGFILE=\"/etc/$OE_CONFIG.conf\"" >> ~/$OE_CONFIG
 echo '' >> ~/$OE_CONFIG
 echo '# pidfile' >> ~/$OE_CONFIG
